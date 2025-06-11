@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Page</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Use the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+
+    <!-- Main container to center content -->
+    <div class="min-h-screen flex items-center justify-center p-4">
+        
+        <!-- Card container for a clean look -->
+        <div class="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 text-center">
+            
+            <!-- Header Text -->
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Visual Supports Grid</h1>
+            <p class="text-gray-600 dark:text-gray-400 mb-8">Click the button below to navigate to the application.</p>
+
+            <!-- The Redirect Button -->
+            <button 
+                onclick="window.location.href='https://visual-supports-grid.vercel.app/'"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800"
+            >
+                Go to Visual Supports
+            </button>
+            
+        </div>
+
+    </div>
+
+</body>
+</html>
