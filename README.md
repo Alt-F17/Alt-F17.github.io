@@ -1,73 +1,65 @@
-# Welcome to your Lovable project
+# Welcome to Felix's Personal Website
 
-## Project info
+## About
 
-**URL**: https://lovable.dev/projects/eb54932f-025a-4941-bb4a-35363e45123f
+This repository hosts my personal website, showcasing my projects, blog posts, and professional portfolio. Built with modern web technologies, it's designed to be fast, responsive, and easy to customize.
 
-## How can I edit this code?
+## Live Site
 
-There are several ways of editing your application.
+Visit the live site at:
 
-**Use Lovable**
+https://felixegan.me
+## Local Development
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/eb54932f-025a-4941-bb4a-35363e45123f) and start prompting.
+To run the site locally, make sure you have Node.js and npm installed.
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+# Clone this repository
 
-**Use your preferred IDE**
+git clone https://github.com/Alt-F17/Alt-F17.github.io.git
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# Change directory
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+cd Alt-F17.github.io
 
-Follow these steps:
+# Install dependencies
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Start development server with hot reload
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open http://localhost:3000 in your browser to view and edit.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Build & Deployment
 
-**Use GitHub Codespaces**
+To create a production build and deploy:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+# Generate optimized build
+npm run build
 
-## What technologies are used for this project?
+# Preview the production build locally
+npm run preview
+```
 
-This project is built with:
+The build output is in the `dist/` folder. You can deploy it to GitHub Pages, Netlify, Vercel, or any static host.
+
+## Technologies
+
+This site uses:
 
 - Vite
-- TypeScript
-- React
-- shadcn-ui
+- React (TypeScript)
 - Tailwind CSS
+- shadcn/ui components
 
-## How can I deploy this project?
+## Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/eb54932f-025a-4941-bb4a-35363e45123f) and click on Share -> Publish.
+Feel free to open issues or pull requests for bug fixes, feature requests, or improvements. Changes are automatically published to GitHub Pages on push to `main`.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+*© 2025 Felix. All rights reserved.*
