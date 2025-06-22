@@ -1,0 +1,104 @@
+import { useRef, useEffect } from 'react';
+
+export const About = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (textRef.current) observer.observe(textRef.current);
+    if (imageRef.current) observer.observe(imageRef.current);
+
+    return () => {
+      if (textRef.current) observer.unobserve(textRef.current);
+      if (imageRef.current) observer.unobserve(imageRef.current);
+    };
+  }, []);
+
+  return (
+    <section id="about" className="section" ref={sectionRef}>
+      <div className="container-padding max-w-7xl mx-auto">
+        <h2 className="section-title relative">
+          <span className="text-[#3b82f6]">/</span> About Me
+        </h2>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+          <div 
+            ref={textRef}
+            className="lg:col-span-7 opacity-0 transform translate-y-4 transition-all duration-1000 border-4 border-[#3b82f6]/20 p-6 rounded-lg bg-space-darker"
+          >
+            <p className="text-lg mb-6">
+              I'm Felix, a 17-year-old Python developer with a passion for creating fun, new solutions to real-world problems. 
+              I love making fun projects that help people and aim to make the world more innovative, efficient, and technologically accessible to all.
+            </p>
+            <p className="text-lg mb-6">
+              Currently studying Science, Computer Science, and Mathematics at Dawson College in Montreal, 
+              I'm always looking for new opportunities to learn and grow.
+            </p>
+            <p className="text-lg mb-6">
+              My journey in programming began in 2021, where I discovered my passion for coding through Python. 
+              Since then, I've expanded my skills to web development, machine learning, and cybersecurity.
+            </p>
+            <p className="text-lg">
+              When I'm not coding, you can find me rock climbing, making music, or writing. 
+              I believe in the power of technology to create positive change and am committed to using my skills to contribute to that vision.
+            </p>
+          </div>
+          
+          <div 
+            ref={imageRef}
+            className="lg:col-span-5 opacity-0 transform translate-y-4 transition-all duration-1000 delay-200"
+          >
+            <div className="relative">
+              <div className="aspect-square rounded-md bg-space-darker border-4 border-[#3b82f6]/20 p-4">
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-40 h-40 mx-auto rounded-full flex items-center justify-center border-4 border-[#3b82f6]/30">
+                      <span className="text-7xl">FE</span>
+                    </div>
+                    <h3 className="mt-4 text-xl font-medium">Felix Egan</h3>
+                    <p className="text-space-text/70">Montreal, Canada</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="absolute -z-10 top-4 left-4 w-full h-full rounded-md border-4 border-[#3b82f6]"></div>
+            </div>
+            
+            <div className="mt-8 space-y-2 border-4 border-[#3b82f6]/20 p-4 rounded-lg bg-space-darker">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[#3b82f6]">age:</span>
+                <span>17</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[#3b82f6]">education:</span>
+                <span>Dawson College</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[#3b82f6]">focus:</span>
+                <span>Python, Machine Learning</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[#3b82f6]">hobbies:</span>
+                <span>Rock Climbing, Music, Writing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;

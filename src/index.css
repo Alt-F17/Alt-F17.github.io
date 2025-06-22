@@ -1,0 +1,116 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 263 60% 75%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 32% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 263 60% 70%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32% 18%;
+    --input: 217 32% 18%;
+    --ring: 263 60% 75%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    @apply overflow-x-hidden;
+  }
+  
+  body {
+    @apply bg-space-dark text-space-text font-sans antialiased overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
+  }
+  
+  code {
+    @apply font-mono;
+  }
+  
+  .stars-canvas {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .section {
+    @apply py-16 min-h-screen w-full flex flex-col justify-center;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white;
+  }
+  
+  .section-subtitle {
+    @apply text-xl md:text-2xl text-space-accent mb-8;
+  }
+  
+  .progress-bar {
+    @apply h-2 rounded-full bg-space-darker overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full rounded-full;
+  }
+
+  /* Increase border thickness for cards and containers */
+  .card, .border, [class*="border-"] {
+    @apply border-4;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-space-darker;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-space-accent2 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-space-accent;
+  }
+}
