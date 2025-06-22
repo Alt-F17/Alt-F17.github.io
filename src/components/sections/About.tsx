@@ -39,7 +39,7 @@ export const About = () => {
             className="lg:col-span-7 opacity-0 transform translate-y-4 transition-all duration-1000 border-4 border-[#3b82f6]/20 p-6 rounded-lg bg-space-darker"
           >
             <p className="text-lg mb-6">
-              I'm Felix, a 17-year-old Python developer with a passion for creating fun, new solutions to real-world problems. 
+              I'm Felix, a 18-year-old Python developer with a passion for creating fun, new solutions to real-world problems. 
               I love making fun projects that help people and aim to make the world more innovative, efficient, and technologically accessible to all.
             </p>
             <p className="text-lg mb-6">
@@ -64,8 +64,8 @@ export const About = () => {
               <div className="aspect-square rounded-md bg-space-darker border-4 border-[#3b82f6]/20 p-4">
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-40 h-40 mx-auto rounded-full flex items-center justify-center border-4 border-[#3b82f6]/30">
-                      <span className="text-7xl">FE</span>
+                    <div className="w-72 h-72 mx-auto rounded-full overflow-hidden border-4 border-[#3b82f6]/30">
+                      <img src="pfp.JPEG" alt="Felix Egan" className="w-full h-full object-cover" />
                     </div>
                     <h3 className="mt-4 text-xl font-medium">Felix Egan</h3>
                     <p className="text-space-text/70">Montreal, Canada</p>
@@ -79,7 +79,7 @@ export const About = () => {
             <div className="mt-8 space-y-2 border-4 border-[#3b82f6]/20 p-4 rounded-lg bg-space-darker">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[#3b82f6]">age:</span>
-                <span>17</span>
+                <span>18</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[#3b82f6]">education:</span>
