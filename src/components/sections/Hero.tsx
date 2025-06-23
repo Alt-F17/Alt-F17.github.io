@@ -43,7 +43,7 @@ export const Hero = () => {
             Python Developer & ML Enthusiast
           </h2>
           <p className="max-w-2xl text-lg mb-8 text-space-text/70">
-            I'm a 17-year-old developer passionate about creating innovative solutions to real-world problems. 
+            I'm a 18-year-old developer passionate about creating innovative solutions to real-world problems. 
             Currently studying Science, Computer Science, and Mathematics at Dawson College in Montreal.
           </p>
           <div className="flex flex-wrap gap-4">

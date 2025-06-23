@@ -1,4 +1,3 @@
-
 import { useRef, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -63,10 +62,10 @@ export const Contact = () => {
         </h2>
         <p className="section-subtitle">Let's get in touch</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8 max-w-5xl mx-auto">
           <div 
             ref={contactRef}
-            className="opacity-0 transform translate-y-4 transition-all duration-1000 md:col-span-1 w-full"
+            className="opacity-0 transform translate-y-4 transition-all duration-1000 md:col-span-3 w-full"
           >
             <Card className="bg-space-darker border-[#3b82f6]/20 border-4 w-full h-full">
               <CardContent className="p-6">
