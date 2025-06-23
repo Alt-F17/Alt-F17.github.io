@@ -1,4 +1,3 @@
-
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { Button } from '@/components/ui/button';
@@ -30,7 +29,7 @@ export const Hero = () => {
 
   return (
     <section id="hero" className="section h-screen flex items-center relative">
-      <div className="container-padding max-w-7xl mx-auto">
+      <div className="container-padding max-w-5xl mx-auto">
         <div 
           ref={textRef} 
           className="opacity-0 transform translate-y-4 transition-all duration-1000 border-4 border-[#3b82f6]/20 p-8 rounded-lg bg-space-darker/50 backdrop-blur-sm"

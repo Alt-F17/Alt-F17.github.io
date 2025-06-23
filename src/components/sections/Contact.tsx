@@ -56,13 +56,13 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="section pb-24">
-      <div className="container-padding max-w-7xl mx-auto">
+      <div className="container-padding max-w-5xl mx-auto">
         <h2 className="section-title">
           <span className="text-space-accent">/</span> Contact
         </h2>
         <p className="section-subtitle">Let's get in touch</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
           <div 
             ref={contactRef}
             className="opacity-0 transform translate-y-4 transition-all duration-1000 md:col-span-3 w-full"

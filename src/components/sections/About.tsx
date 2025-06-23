@@ -28,7 +28,7 @@ export const About = () => {
 
   return (
     <section id="about" className="section" ref={sectionRef}>
-      <div className="container-padding max-w-7xl mx-auto">
+      <div className="container-padding max-w-5xl mx-auto">
         <h2 className="section-title relative">
           <span className="text-[#3b82f6]">/</span> About Me
         </h2>

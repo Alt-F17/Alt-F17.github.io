@@ -1,4 +1,3 @@
-
 import { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -74,7 +73,7 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="section">
-      <div className="container-padding max-w-7xl mx-auto">
+      <div className="container-padding max-w-5xl mx-auto">
         <div 
           ref={projectsRef}
           className="opacity-0 transform translate-y-4 transition-all duration-700"
