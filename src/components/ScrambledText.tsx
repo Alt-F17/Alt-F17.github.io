@@ -1,54 +1,66 @@
-import React, { useEffect, useState } from 'react';
+/// <reference types="react" />
+/// <reference types="react/jsx-runtime" />
+import { useEffect, useState } from 'react';
 
 interface ScrambledTextProps {
   initialText: string;
   targetText: string;
   scrambleChars?: string[];
-  duration?: number; // total animation duration in seconds
-  speed?: number; // interval in ms between scrambles
+  duration?: number; // total animation duration in seconds (unused)
+  speed?: number;     // interval in ms between scrambles
   className?: string;
 }
 
-const defaultScrambleChars = ['.', ':', '⠿', '⠻', '⠽', '⠾', '⠄'];
+const defaultScrambleChars = ['⣀','⣤','⣶','⣿','⠿','⠛','⠉'];
 
-const ScrambledText: React.FC<ScrambledTextProps> = ({
+const ScrambledText = ({
   initialText,
   targetText,
   scrambleChars = defaultScrambleChars,
-  duration = 1.2,
-  speed = 50,
+  duration = 0,
+  speed = 100,
   className,
-}) => {
-  const [displayText, setDisplayText] = useState<string>(initialText);
+}: ScrambledTextProps) => {
+  // pad strings to equal length
+  const maxLen = Math.max(initialText.length, targetText.length);
+  const start = initialText.padEnd(maxLen, ' ');
+  const end = targetText.padEnd(maxLen, ' ');
+  const [displayText, setDisplayText] = useState<string>(start);
 
   useEffect(() => {
-    const maxLen = Math.max(initialText.length, targetText.length);
-    let step = 0;
-    const totalSteps = targetText.length;
-    const stepDelay = (duration * 1000) / totalSteps;
+    const n = maxLen;
+    const frames = scrambleChars;
+    // Initialize current chars and per-letter state
+    const current = start.split('');
+    const state = Array.from({ length: n }, () => ({ idx: 0, done: false }));
+    let tick = 0;
 
-    const scrambleInterval = setInterval(() => {
-      step++;
-      const newText = Array.from({ length: maxLen }, (_, i) => {
-        if (i < step) {
-          return targetText[i] || '';
+    const interval = setInterval(() => {
+      // for each letter
+      for (let i = 0; i < n; i++) {
+        const s = state[i];
+        if (!s.done && tick >= i) {
+          if (s.idx < frames.length) {
+            current[i] = frames[s.idx];
+            s.idx++;
+          } else {
+            current[i] = end[i];
+            s.done = true;
+          }
         }
-        // pick random char
-        return scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
-      }).join('');
-
-      setDisplayText(newText);
-
-      if (step >= totalSteps) {
-        clearInterval(scrambleInterval);
-        setDisplayText(targetText);
       }
-    }, Math.max(speed, stepDelay));
+      setDisplayText(current.join(''));
+      tick++;
+      // if all done, stop
+      if (state.every((s) => s.done)) {
+        clearInterval(interval);
+      }
+    }, speed);
 
-    return () => clearInterval(scrambleInterval);
-  }, [initialText, targetText, scrambleChars, duration, speed]);
+    return () => clearInterval(interval);
+  }, [initialText, targetText, scrambleChars, speed]);
 
-  return <span className={className}>{displayText}</span>;
+  return <span className={className}>{displayText.trimEnd()}</span>;
 };
 
 export default ScrambledText;

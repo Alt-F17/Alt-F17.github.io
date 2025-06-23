@@ -48,11 +48,11 @@ const Index = () => {
         <div className="fixed inset-0 bg-space-darker flex items-center justify-center z-50">
           <div className="text-center">
             <ScrambledText
-              initialText="Alt-F17"
+              initialText="$/Alt-F17/"
               targetText="Felix Egan"
               className="text-4xl font-bold mb-4"
-              scrambleChars={[".",":","⠿","⠻","⠽","⠾","⠄"]}
-              duration={1.2}
+              scrambleChars={["⣀","⣤","⣶","⣿","⠿","⠛","⠉"]}
+              duration={3.4}
               speed={100}
             />
              <div className="w-48 h-1 bg-space-dark mx-auto rounded-full overflow-hidden">
