@@ -31,16 +31,8 @@ const Index = () => {
   useEffect(() => {
     // Mark that we're on the main page now
     sessionStorage.setItem('visitedSubpage', 'false');
-    
-    // Only show loading animation if we didn't come from a subpage
-    if (isLoading) {
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [isLoading]);
+    // loading will be dismissed via scramble onComplete
+  }, []);
 
   return (
     <div className="relative">
@@ -52,8 +44,9 @@ const Index = () => {
               targetText="Felix Egan"
               className="text-4xl font-bold mb-4"
               scrambleChars={["⣀","⣤","⣶","⣿","⠿","⠛","⠉"]}
-              duration={3.4}
+              duration={5}
               speed={100}
+              onComplete={() => setIsLoading(false)}
             />
              <div className="w-48 h-1 bg-space-dark mx-auto rounded-full overflow-hidden">
                <div className="h-full bg-[#3b82f6] animate-pulse"></div>
