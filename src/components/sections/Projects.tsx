@@ -152,13 +152,6 @@ export const Projects = () => {
             </div>
           ))}
         </div>
-        
-        <div className="mt-12 text-center opacity-0 transform translate-y-4 transition-all duration-700" ref={addToCardRefs}>
-          <p className="mb-6">Interested in adding your project to this site?</p>
-          <Button className="bg-[#3b82f6] hover:bg-[#3b82f6]/80 text-white">
-            <a href="#contact">Let's Talk</a>
-          </Button>
-        </div>
       </div>
     </section>
   );
