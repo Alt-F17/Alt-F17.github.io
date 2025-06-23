@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { Discord, Mail, Coffee } from 'lucide-react';
+import { Mail, Coffee } from 'lucide-react';
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -151,7 +151,15 @@ export const Contact = () => {
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                           </>
                         )}
-                        {social.icon === 'discord' && <Discord className="w-5 h-5 text-space-accent" />}
+                        {social.icon === 'discord' && (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-5 h-5 text-space-accent"
+                            viewBox="0 0 71 55"
+                          >
+                            <path d="M60.104 4.552a58.992 58.992 0 0 0-14.885-4.745.264.264 0 0 0-.279.131c-.645 1.119-1.364 2.578-1.872 3.752-6.25-.942-12.479-.942-18.591 0-.508-1.174-1.227-2.633-1.872-3.752a.276.276 0 0 0-.279-.131A58.88 58.88 0 0 0 10.896 4.55a.249.249 0 0 0-.132.093C2.095 18.619-.635 32.29.204 45.797a.286.286 0 0 0 .09.198A59.718 59.718 0 0 0 23.24 51.19c.257-.354.485-.727.684-1.121a41.7 41.7 0 0 1-6.18-3 41.47 41.47 0 0 0 3.973-1.884c7.382 3.422 15.31 3.422 22.68 0a41.327 41.327 0 0 0 3.975 1.884 41.7 41.7 0 0 1-6.18 3c.2.394.429.767.684 1.121a59.716 59.716 0 0 0 22.18-5.195.286.286 0 0 0 .09-.198c.84-13.5-1.89-27.172-10.764-41.152a.249.249 0 0 0-.132-.093zM23.725 37.005c-3.847 0-6.993-3.515-6.993-7.841 0-4.326 3.111-7.841 6.993-7.841 3.888 0 7.028 3.515 6.993 7.841 0 4.326-3.111 7.841-6.993 7.841zm23.603 0c-3.847 0-6.993-3.515-6.993-7.841 0-4.326 3.111-7.841 6.993-7.841 3.888 0 7.028 3.515 6.993 7.841 0 4.326-3.105 7.841-6.993 7.841z"/>
+                          </svg>
+                        )}
                         {social.icon === 'email' && <Mail className="w-5 h-5 text-space-accent" />}
                       </div>
                       
