@@ -178,7 +178,7 @@ export const Contact = () => {
                    <span className="text-space-accent">@Felix Egan</span>
                  </a>
                 <a
-                   href="coff.ee/alt.f17"
+                   href="https://coff.ee/alt.f17"
                    target="_blank"
                    rel="noopener noreferrer"
                    className="flex items-center text-space-text hover:text-space-accent transition-colors"
