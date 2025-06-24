@@ -16,7 +16,7 @@ export const Contact = () => {
   const socials = [
     { name: 'GitHub', username: '@Alt-F17', url: 'https://github.com/Alt-F17', icon: 'github' },
     { name: 'Instagram', username: '@felix.idk.tbh', url: 'https://instagram.com/felix.idk.tbh', icon: 'instagram' },
-    { name: 'Discord', username: 'Alt-F17', url: 'https://discord.com/users/707956607123718174', icon: 'discord' },
+    { name: 'Discord', username: 'Alt_F17', url: 'https://discord.com/users/707956607123718174', icon: 'discord' },
     { name: 'Email', username: 'felix.egan@icloud.com', url: 'mailto:felix.egan@icloud.com', icon: 'email' }
   ];
 

@@ -1,13 +1,14 @@
 import { useRef, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { FaPython, FaHtml5, FaLinux, FaGitAlt, FaUserSecret, FaMicrochip } from 'react-icons/fa';
 
 const skills = [
-	{ name: 'Python Development', proficiency: 90 },
-	{ name: 'HTML/CSS', proficiency: 85 },
-	{ name: 'Machine Learning Training (PLUTO)', proficiency: 38 },
-	{ name: 'Windows & Linux CLI', proficiency: 75 },
-	{ name: 'Git and Github', proficiency: 87 },
-	{ name: 'HackTheBox Ethical Hacking', proficiency: 12 },
+	{ name: 'Python Development', icon: FaPython },
+	{ name: 'HTML/CSS', icon: FaHtml5 },
+	{ name: 'ML (Machine Learning)', icon: FaMicrochip },
+	{ name: 'Windows & Linux CLI', icon: FaLinux },
+	{ name: 'Git and Github', icon: FaGitAlt },
+	{ name: 'HackTheBox Ethical Hacking', icon: FaUserSecret },
 ];
 
 export const Skills = () => {
@@ -55,22 +56,11 @@ export const Skills = () => {
 							className="opacity-0 transform translate-y-4 transition-all duration-700"
 							style={{ transitionDelay: `${index * 100}ms` }}
 						>
-							<Card className="bg-space-darker border-space-accent/20 border-4 overflow-hidden">
+							<Card className="bg-space-darker border-space-accent/20 lg:border-4 overflow-hidden">
 								<CardContent className="p-6">
-									<div className="flex justify-between items-center mb-2">
+									<div className="flex items-center mb-2">
+										<skill.icon className="w-6 h-6 text-space-accent mr-3" />
 										<h3 className="text-lg font-medium">{skill.name}</h3>
-										<span className="text-space-accent">
-											{skill.proficiency}%
-										</span>
-									</div>
-									<div className="progress-bar">
-										<div
-											className="progress-fill bg-space-accent"
-											style={{
-												width: `${skill.proficiency}%`,
-												transition: 'width 1s ease-in-out',
-											}}
-										></div>
 									</div>
 								</CardContent>
 							</Card>
@@ -83,7 +73,7 @@ export const Skills = () => {
 					className="mt-12 opacity-0 transform translate-y-4 transition-all duration-700"
 					style={{ transitionDelay: `${skills.length * 100}ms` }}
 				>
-					<Card className="bg-space-darker border-space-accent/20 border-4">
+					<Card className="bg-space-darker border-space-accent/20 lg:border-4">
 						<CardContent className="p-6">
 							<h3 className="text-xl font-medium mb-4">
 								Current Focus & Aspirations
