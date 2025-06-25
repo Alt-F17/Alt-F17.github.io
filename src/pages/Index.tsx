@@ -39,10 +39,10 @@ const Index = () => {
       {isLoading ? (
         <div className="fixed inset-0 bg-space-darker flex items-center justify-center z-50">
           <div className="text-center">
-            <ScrambledText
+            <ScrambledText // monospace font
               initialText="$/Alt-F17/"
               targetText="Felix Egan"
-              className="text-4xl font-bold mb-4"
+              className="text-4xl font-bold mb-4 font-mono"
               scrambleChars={["⣀","⣤","⣶","⣿","⠿","⠛","⠉"]}
               duration={5}
               speed={100}
