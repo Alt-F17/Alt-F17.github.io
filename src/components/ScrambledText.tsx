@@ -56,10 +56,12 @@ const ScrambledText = ({
          setDisplayText(current.join(''));
          tick++;
          // if all done, stop
-        if (state.every((s) => s.done)) {
-          clearInterval(intervalId);
-          // notify completion
-          onComplete && onComplete();
+         if (state.every((s) => s.done)) {
+           clearInterval(intervalId);
+           // wait 300ms before firing onComplete
+           window.setTimeout(() => {
+             onComplete && onComplete();
+           }, 300);
          }
        }, speed);
     }, 200);
