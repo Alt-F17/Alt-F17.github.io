@@ -72,7 +72,8 @@ const ScrambledText = ({
     };
   }, [initialText, targetText, scrambleChars, speed]);
 
-  return <span className={className}>{displayText.trimEnd()}</span>;
+  // Preserve trailing spaces for constant width and use pre whitespace
+  return <span className={`${className} whitespace-pre`}>{displayText}</span>;
 };
 
 export default ScrambledText;
