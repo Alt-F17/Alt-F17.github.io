@@ -44,8 +44,8 @@ const Index = () => {
               targetText="Felix Egan"
               className="text-4xl font-bold mb-4 font-mono"
               scrambleChars={["⣀","⣤","⣶","⣿","⠿","⠛","⠉"]}
-              duration={4.5}
-              speed={110}
+              duration={3.6}
+              speed={90}
               onComplete={() => setIsLoading(false)}
             />
              <div className="w-48 h-1 bg-space-dark mx-auto rounded-full overflow-hidden">
