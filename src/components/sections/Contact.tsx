@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, FormEvent } from 'react';
+import React, { useRef, useEffect, FormEvent, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -12,6 +12,23 @@ export const Contact = () => {
   const contactRef = useRef<HTMLDivElement>(null);
   const socialRef = useRef<HTMLDivElement>(null);
   const supportRef = useRef<HTMLDivElement>(null);
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  
+  const isFormValid = formData.name.trim() !== '' && 
+                     formData.email.trim() !== '' && 
+                     formData.message.trim() !== '';
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
 
   const socials = [
     { name: 'GitHub', username: '@Alt-F17', url: 'https://github.com/Alt-F17', icon: 'github' },
@@ -29,6 +46,7 @@ export const Contact = () => {
     
     if (formRef.current) {
       formRef.current.reset();
+      setFormData({ name: '', email: '', message: '' });
     }
   };
 
@@ -79,6 +97,8 @@ export const Contact = () => {
                     <Input
                       id="name"
                       placeholder="Your Name"
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
                       required
                       className="bg-space-dark border-space-accent/30 focus:border-space-accent"
                     />
@@ -92,6 +112,8 @@ export const Contact = () => {
                       id="email"
                       type="email"
                       placeholder="yourname@example.com"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
                       required
                       className="bg-space-dark border-space-accent/30 focus:border-space-accent"
                     />
@@ -104,6 +126,8 @@ export const Contact = () => {
                     <Textarea
                       id="message"
                       placeholder="Feel free to reach out with any questions or just to say hi!"
+                      value={formData.message}
+                      onChange={(e) => handleInputChange('message', e.target.value)}
                       required
                       className="min-h-[150px] bg-space-dark border-space-accent/30 focus:border-space-accent"
                     />
@@ -111,18 +135,22 @@ export const Contact = () => {
                   
                   <Button
                     type="button"
+                    disabled={!isFormValid}
                     onClick={() => {
-                      if (!formRef.current) return;
-                      const formData = new FormData(formRef.current);
-                      const name = formData.get('name');
-                      const email = formData.get('email');
-                      const message = formData.get('message');
+                      if (!formRef.current || !isFormValid) return;
+                      const name = formData.name;
+                      const email = formData.email;
+                      const message = formData.message;
                       const subject = `Message from ${name}`;
                       const body = `From: ${name}\n@: ${email}\n\n${message}`;
                       const mailtoLink = `mailto:felix.egan@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                       window.location.href = mailtoLink;
                     }}
-                    className="w-full bg-space-accent hover:bg-space-accent/80 text-white"
+                    className={`w-full transition-all ${
+                      isFormValid 
+                        ? 'bg-space-accent hover:bg-space-accent/80 text-white' 
+                        : 'bg-gray-500 text-gray-300 cursor-not-allowed'
+                    }`}
                   >
                     Send Message
                   </Button>
