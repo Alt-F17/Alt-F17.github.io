@@ -25,8 +25,10 @@ const ScrambledText = ({
 }: ScrambledTextProps) => {
   // pad strings to equal length
   const maxLen = Math.max(initialText.length, targetText.length);
-  const start = initialText.padEnd(maxLen, ' ');
-  const end = targetText.padEnd(maxLen, ' ');
+  // Use braille blank (U+2800) for padding to maintain uniform width
+  const brailleBlank = '\u2800';
+  const start = initialText.padEnd(maxLen, brailleBlank);
+  const end = targetText.padEnd(maxLen, brailleBlank);
   const [displayText, setDisplayText] = useState<string>(start);
 
   useEffect(() => {
@@ -72,8 +74,16 @@ const ScrambledText = ({
     };
   }, [initialText, targetText, scrambleChars, speed]);
 
-  // Preserve trailing spaces for constant width and use pre whitespace
-  return <span className={`${className} whitespace-pre`}>{displayText}</span>;
+  // Render each character in a fixed-width inline-block to ensure uniform width
+  return (
+    <span className={className} style={{ whiteSpace: 'nowrap' }}>
+      {displayText.split('').map((char, idx) => (
+        <span key={idx} className="inline-block w-[1ch] text-center">
+          {char}
+        </span>
+      ))}
+    </span>
+  );
 };
 
 export default ScrambledText;
