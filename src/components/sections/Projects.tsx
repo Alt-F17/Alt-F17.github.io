@@ -26,7 +26,7 @@ const projects: Project[] = [
   {
     title: "Portfolio Website",
     description: "A space-themed portfolio website showcasing my projects and skills using Three.js and React.",
-    technologies: ["React", "Three.js", "Tailwind CSS"],
+    technologies: ["React", "Next.js", "Three.js", "Tailwind CSS"],
     status: "completed",
     id: "portfolio-website"
   },
@@ -36,6 +36,29 @@ const projects: Project[] = [
     technologies: ["Python", "Bash", "Networking"],
     status: "in-progress",
     id: "cybersecurity-tools"
+  },
+  {
+    title: "DawsHacks Website",
+    description: "Website for DawsHacks, a hackathon event at Dawson College, showcasing event details, schedules, and registration.",
+    technologies: ["React", "Next.js", "Tailwind CSS"],
+    status: "in-progress",
+    id: "dawshacks-website"
+  },
+  {
+    title: "STM stat.us",
+    description: "Online social platform where users can report real-time downtimes on the STM (Société de transport de Montréal) network, providing a community-driven solution for public transit issues.",
+    technologies: ["React", "Node.js", "Express", "MongoDB"],
+    status: "in-progress",
+    id: "stm-status",
+    githubUrl: "https://github.com/Alt-F17/stm-status"
+  },
+  {
+    title: "SF Study Tools",
+    description: "A collection of study tools for Dawson College's Science, Computer Science, and Mathematics students to help with their studies, including flashcards, quizzes, and resources.",
+    technologies: ["React", "Next.js", "Tailwind CSS"],
+    status: "completed",
+    id: "sf-study-tools",
+    githubUrl: "https://github.com/Alt-F17/sf-study-tools"
   }
 ];
 
