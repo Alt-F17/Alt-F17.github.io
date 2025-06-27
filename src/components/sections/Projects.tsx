@@ -94,61 +94,49 @@ export const Projects = () => {
               onMouseEnter={() => setActiveProject(index)}
               onMouseLeave={() => setActiveProject(null)}
             >
-              <Card className={`h-full border-2 border-[#3b82f6]/20 bg-space-darker hover:border-[#3b82f6]/50 transition-all duration-300 ${activeProject === index ? 'transform scale-[1.02]' : ''}`}>
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-xl">{project.title}</CardTitle>
-                    {project.status === "in-progress" && (
-                      <span className="text-xs py-1 px-2 rounded bg-[#3b82f6]/20 text-[#3b82f6] border-2 border-[#3b82f6]/30">
-                        In Progress
-                      </span>
-                    )}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-space-text/70 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map(tech => (
-                      <span 
-                        key={tech} 
-                        className="text-xs py-1 px-2 rounded bg-space-darker border-2 border-[#3b82f6]/30 text-space-text/80"
+              <Link to={`/projects/${project.id}`} className="block h-full">
+                <Card className={`h-full border-2 border-[#3b82f6]/20 bg-space-darker hover:border-[#3b82f6]/50 transition-all duration-300 ${activeProject === index ? 'transform scale-[1.02]' : ''}`}>  
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-xl">{project.title}</CardTitle>
+                      {project.status === "in-progress" && (
+                        <span className="text-xs py-1 px-2 rounded bg-[#3b82f6]/20 text-[#3b82f6] border-2 border-[#3b82f6]/30">
+                          In Progress
+                        </span>
+                      )}
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-space-text/70 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map(tech => (
+                        <span 
+                          key={tech} 
+                          className="text-xs py-1 px-2 rounded bg-space-darker border-2 border-[#3b82f6]/30 text-space-text/80"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex justify-start gap-4">
+                    {project.githubUrl && (
+                      <Button 
+                        variant="ghost"
+                        className="text-[#3b82f6] hover:bg-[#3b82f6]/20"
+                        asChild
                       >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex justify-start gap-4">
-                  {project.githubUrl && (
-                    <Button 
-                      variant="ghost"
-                      className="text-[#3b82f6] hover:bg-[#3b82f6]/20"
-                      asChild
-                    >
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                        </svg>
-                        GitHub
-                      </a>
-                    </Button>
-                  )}
-                  <Button 
-                    variant="ghost" 
-                    className="text-[#3b82f6] hover:bg-[#3b82f6]/20"
-                    asChild
-                  >
-                    <Link to={`/projects/${project.id}`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
-                      View Project
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                          </svg>
+                          GitHub
+                        </a>
+                      </Button>
+                    )}
+                  </CardFooter>
+                </Card>
+              </Link>
             </div>
           ))}
         </div>

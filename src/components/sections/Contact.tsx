@@ -91,7 +91,7 @@ export const Contact = () => {
             <Card className="bg-space-darker border-[#3b82f6]/20 border-4 w-full h-full">
               <CardContent className="p-6">
                 <h3 className="text-xl font-medium mb-6">Send me a message</h3>
-                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col h-full space-y-4">
                   <div className="space-y-2">
                     <label htmlFor="name" className="block text-sm font-medium">
                       Your Name
@@ -121,7 +121,7 @@ export const Contact = () => {
                     />
                   </div>
                   
-                  <div className="space-y-2">
+                  <div className="space-y-2 flex-1">
                     <label htmlFor="message" className="block text-sm font-medium">
                       Message
                     </label>
@@ -131,7 +131,7 @@ export const Contact = () => {
                       value={formData.message}
                       onChange={(e) => handleInputChange('message', e.target.value)}
                       required
-                      className="min-h-[150px] bg-space-dark border-space-accent/30 focus:border-space-accent"
+                      className="flex-1 bg-space-dark border-space-accent/30 focus:border-space-accent"
                     />
                   </div>
                   
