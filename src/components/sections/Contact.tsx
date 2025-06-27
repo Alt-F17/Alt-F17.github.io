@@ -78,7 +78,7 @@ export const Contact = () => {
                     </label>
                     <Input
                       id="name"
-                      placeholder="John Doe"
+                      placeholder="Your Name"
                       required
                       className="bg-space-dark border-space-accent/30 focus:border-space-accent"
                     />
@@ -91,7 +91,7 @@ export const Contact = () => {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="yourname@example.com"
                       required
                       className="bg-space-dark border-space-accent/30 focus:border-space-accent"
                     />
@@ -103,14 +103,25 @@ export const Contact = () => {
                     </label>
                     <Textarea
                       id="message"
-                      placeholder="I'd like to talk about..."
+                      placeholder="Feel free to reach out with any questions or just to say hi!"
                       required
                       className="min-h-[150px] bg-space-dark border-space-accent/30 focus:border-space-accent"
                     />
                   </div>
                   
-                  <Button 
-                    type="submit"
+                  <Button
+                    type="button"
+                    onClick={() => {
+                      if (!formRef.current) return;
+                      const formData = new FormData(formRef.current);
+                      const name = formData.get('name');
+                      const email = formData.get('email');
+                      const message = formData.get('message');
+                      const subject = `Message from ${name}`;
+                      const body = `From: ${name}\n@: ${email}\n\n${message}`;
+                      const mailtoLink = `mailto:felix.egan@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                      window.location.href = mailtoLink;
+                    }}
                     className="w-full bg-space-accent hover:bg-space-accent/80 text-white"
                   >
                     Send Message
