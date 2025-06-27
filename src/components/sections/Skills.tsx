@@ -5,7 +5,7 @@ import { FaPython, FaHtml5, FaLinux, FaGitAlt, FaUserSecret, FaMicrochip } from 
 const skills = [
 	{ name: 'Python Development', icon: FaPython },
 	{ name: 'HTML/CSS', icon: FaHtml5 },
-	{ name: 'ML (Machine Learning)', icon: FaMicrochip },
+	{ name: 'Machine Learning', icon: FaMicrochip },
 	{ name: 'Windows & Linux CLI', icon: FaLinux },
 	{ name: 'Git and Github', icon: FaGitAlt },
 	{ name: 'HackTheBox Ethical Hacking', icon: FaUserSecret },
