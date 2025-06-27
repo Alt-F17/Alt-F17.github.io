@@ -71,10 +71,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
-			fontFamily: {
-				'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
-				'mono': ['JetBrains Mono', 'monospace'],
-			},
+		   fontFamily: {
+			   'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+			   'mono': ['Noto Sans Mono', 'JetBrains Mono', 'monospace'],
+		   },
 			keyframes: {
 				'accordion-down': {
 					from: { height: '0' },
