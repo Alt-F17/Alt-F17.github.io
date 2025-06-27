@@ -8,7 +8,7 @@ const skills = [
 	{ name: 'Machine Learning', icon: FaMicrochip },
 	{ name: 'Windows & Linux CLI', icon: FaLinux },
 	{ name: 'Git and Github', icon: FaGitAlt },
-	{ name: 'HackTheBox Ethical Hacking', icon: FaUserSecret },
+	{ name: 'HackTheBox Academy', icon: FaUserSecret },
 ];
 
 export const Skills = () => {

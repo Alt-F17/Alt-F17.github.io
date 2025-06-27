@@ -5,6 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { FaGithub, FaInstagram, FaDiscord, FaEnvelope, FaPaypal, FaCoffee } from 'react-icons/fa';
+import { SiHackthebox } from 'react-icons/si';
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -32,6 +33,7 @@ export const Contact = () => {
 
   const socials = [
     { name: 'GitHub', username: '@Alt-F17', url: 'https://github.com/Alt-F17', icon: 'github' },
+    { name: 'HTB Academy', username: '@AltF17', url: 'https://app.hackthebox.com/profile/AltF17', icon: 'hackthebox' },
     { name: 'Instagram', username: '@felixegan_', url: 'https://instagram.com/felixegan_', icon: 'instagram' },
     { name: 'Discord', username: 'Alt_F17', url: 'https://discord.com/users/707956607123718174', icon: 'discord' },
     { name: 'Email', username: 'felix.egan@icloud.com', url: 'mailto:felix.egan@icloud.com', icon: 'email' }
@@ -182,6 +184,7 @@ export const Contact = () => {
                         {social.icon === 'instagram' && <FaInstagram className="w-5 h-5 text-space-accent" />}
                         {social.icon === 'discord' && <FaDiscord className="w-5 h-5 text-space-accent" />}
                         {social.icon === 'email' && <FaEnvelope className="w-5 h-5 text-space-accent" />}
+                        {social.icon === 'hackthebox' && <SiHackthebox className="w-5 h-5 text-space-accent" />}
                       </div>
                       
                       <div>

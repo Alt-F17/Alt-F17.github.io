@@ -39,20 +39,20 @@ export const About = () => {
             className="lg:col-span-7 opacity-0 transform translate-y-4 transition-all duration-1000 border-4 border-[#3b82f6]/20 p-6 rounded-lg bg-space-darker"
           >
             <p className="text-lg mb-6">
-              I'm Felix, a 18-year-old Python developer with a passion for creating fun, new solutions to real-world problems. 
+              I'm Felix, a software developer with a passion for creating fun, new solutions to real-world problems. 
               I love making fun projects that help people and aim to make the world more innovative, efficient, and technologically accessible to all.
             </p>
             <p className="text-lg mb-6">
               Currently studying Science, Computer Science, and Mathematics at Dawson College in Montreal, 
-              I'm always looking for new opportunities to learn and grow.
+              I'm helping the next generation of developers through mentorship and events like DawsHacks.
             </p>
             <p className="text-lg mb-6">
-              My journey in programming began in 2021, where I discovered my passion for coding through Python. 
-              Since then, I've expanded my skills to web development, machine learning, and cybersecurity.
+              My journey in programming began in 2019, where I discovered my passion for coding through Python during the pandemic. 
+              Since then, I've expanded my skills to web development, machine learning, MCP orchestration, and cybersecurity.
             </p>
             <p className="text-lg">
-              When I'm not coding, you can find me rock climbing, making music, or writing. 
-              I believe in the power of technology to create positive change and am committed to using my skills to contribute to that vision.
+              When I'm not coding, I'm probably rock climbing, making music, creating content on my social media page, or riding through the city on my OneWheel. 
+              I believe that tech can create a positive change in the world and I am committed to using my skills to contribute to that vision.
             </p>
           </div>
           
