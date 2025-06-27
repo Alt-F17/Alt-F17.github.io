@@ -78,7 +78,7 @@ export const Contact = () => {
                     </label>
                     <Input
                       id="name"
-                      placeholder="Your Name"
+                      placeholder="John Doe"
                       required
                       className="bg-space-dark border-space-accent/30 focus:border-space-accent"
                     />
@@ -91,7 +91,7 @@ export const Contact = () => {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="yourname@example.com"
+                      placeholder="john@example.com"
                       required
                       className="bg-space-dark border-space-accent/30 focus:border-space-accent"
                     />
@@ -103,7 +103,7 @@ export const Contact = () => {
                     </label>
                     <Textarea
                       id="message"
-                      placeholder="Feel free to reach out with any questions or just to say hi!"
+                      placeholder="I'd like to talk about..."
                       required
                       className="min-h-[150px] bg-space-dark border-space-accent/30 focus:border-space-accent"
                     />
