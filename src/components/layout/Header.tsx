@@ -63,7 +63,7 @@ export const Header = () => {
             variant="outline"
             className="border-[#3b82f6] text-[#3b82f6] hover:bg-[#3b82f6] hover:text-white"
           >
-            <a href="/resume_template.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/CV.pdf" target="_blank" rel="noopener noreferrer">
               Resume
             </a>
           </Button>
